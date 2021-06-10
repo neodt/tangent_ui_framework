@@ -29,23 +29,20 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * @author nditema
- */
 public class SeleniumDriverUtility {
 
-    private static WebDriver Driver;
+    private static WebDriver driver;
     private static int _timeout = 30;
     private static Boolean _driverRunning = false;
     private static int screenshot_counter = 0;
     private static Enums.BrowserType selectedBrowser;
 
     public static WebDriver getDriver() {
-        return Driver;
+        return driver;
     }
 
-    public void setDriver(WebDriver DRIVER) {
-        Driver = DRIVER;
+    public void setDriver(WebDriver dvr) {
+        driver = dvr;
     }
 
     public SeleniumDriverUtility(Enums.BrowserType browser) {
@@ -61,7 +58,7 @@ public class SeleniumDriverUtility {
     }
 
     public static WebDriver driver() {
-        return Driver;
+        return driver;
     }
 
     public static Boolean launchDriver() {
@@ -69,28 +66,28 @@ public class SeleniumDriverUtility {
             switch (selectedBrowser) {
                 case CHROME:
                     WebDriverManager.chromedriver().setup(); //Using Web-driver to configure properties
-                    Driver = new ChromeDriver();
+                    driver = new ChromeDriver();
                     break;
                 case IE:
                     WebDriverManager.iedriver().setup();
-                    Driver = new InternetExplorerDriver();
+                    driver = new InternetExplorerDriver();
                     break;
 
                 case EDGE:
 //                    System.setProperty("webdriver.edge.driver", "C:\\Windows\\System32\\MicrosoftWebDriver.exe");
                     WebDriverManager.edgedriver().setup();
-                    Driver = new EdgeDriver();
+                    driver = new EdgeDriver();
                     break;
                 case FIREFOX:
                     WebDriverManager.firefoxdriver().setup();
-                    Driver = new FirefoxDriver();
+                    driver = new FirefoxDriver();
                     break;
                 default:
                     System.err.println("[ERROR] - Failed to select the driver type - '" +selectedBrowser+ "'. Please make sure you select Firefox / Chrome / IE.");
                     return false;
             }
 
-            Driver.manage().window().maximize();
+            driver.manage().window().maximize();
             _driverRunning = true;
 
             return true;
@@ -102,8 +99,8 @@ public class SeleniumDriverUtility {
 
     public static void quit() {
         try {
-            Driver.quit();
-            Driver = null;
+            driver.quit();
+            driver = null;
             _driverRunning = false;
         } catch (Exception e) {
 
@@ -112,7 +109,7 @@ public class SeleniumDriverUtility {
 
     public static void refreshPage() {
         try {
-            Driver.navigate().refresh();
+            driver.navigate().refresh();
         } catch (Exception e) {
 
         }
@@ -136,7 +133,7 @@ public class SeleniumDriverUtility {
 
     public static Boolean navigateToURL(String URL) {
         try {
-            Driver.navigate().to(URL);
+            driver.navigate().to(URL);
             return true;
         } catch (Exception e) {
             return false;
@@ -145,7 +142,7 @@ public class SeleniumDriverUtility {
 
     public static Boolean setPageLoadTimeout(int pageTimeout) {
         try {
-            Driver.manage().timeouts().pageLoadTimeout(pageTimeout, TimeUnit.SECONDS);
+            driver.manage().timeouts().pageLoadTimeout(pageTimeout, TimeUnit.SECONDS);
             return true;
         } catch (Exception e) {
             System.err.println("Failed to set timeout - " + e.getMessage());
@@ -160,7 +157,7 @@ public class SeleniumDriverUtility {
             int waitCount = 0;
             while (!foundElement && waitCount < getTimeout()) {
                 try {
-                    WebDriverWait wait = new WebDriverWait(Driver, 1);
+                    WebDriverWait wait = new WebDriverWait(driver, 1);
                     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
                     foundElement = true;
                 } catch (Exception e) {
@@ -179,7 +176,7 @@ public class SeleniumDriverUtility {
             int waitCount = 0;
             while (!foundElement && waitCount < duration) {
                 try {
-                    WebDriverWait wait = new WebDriverWait(Driver, 1);
+                    WebDriverWait wait = new WebDriverWait(driver, 1);
                     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
                     foundElement = true;
                 } catch (Exception e) {
@@ -195,7 +192,7 @@ public class SeleniumDriverUtility {
     public static Boolean clickElement(String xpath) {
         try {
             waitForElement(xpath);
-            WebDriverWait wait = new WebDriverWait(Driver, 1);
+            WebDriverWait wait = new WebDriverWait(driver, 1);
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
             element.click();
 
@@ -208,7 +205,7 @@ public class SeleniumDriverUtility {
     public static Boolean setRadioButton(String xpath) {
         try {
             waitForElement(xpath);
-            WebDriverWait wait = new WebDriverWait(Driver, 1);
+            WebDriverWait wait = new WebDriverWait(driver, 1);
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
 
             if (!element.isSelected()) {
@@ -227,21 +224,18 @@ public class SeleniumDriverUtility {
         boolean presentFlag = false;
 
         try {
-// Check the presence of alert
-            Driver.switchTo().alert();
-// Alert present; set the flag
+            driver.switchTo().alert();
             presentFlag = true;
         } catch (NoAlertPresentException ex) {
-// Alert not present
-        }
 
+        }
         return presentFlag;
     }
 
     public static Boolean setCheckBox(String xpath, Boolean check) {
         try {
             waitForElement(xpath);
-            WebDriverWait wait = new WebDriverWait(Driver, 1);
+            WebDriverWait wait = new WebDriverWait(driver, 1);
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
 
             if (!element.isSelected() && check) {
@@ -262,7 +256,7 @@ public class SeleniumDriverUtility {
     public static Boolean enterText(String xpath, String text) {
         try {
             waitForElement(xpath);
-            WebDriverWait wait = new WebDriverWait(Driver, 1);
+            WebDriverWait wait = new WebDriverWait(driver, 1);
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
             element.sendKeys(text);
 
@@ -275,7 +269,7 @@ public class SeleniumDriverUtility {
     public static Boolean selectOptionByText(String xpath, String text) {
         try {
             waitForElement(xpath);
-            WebDriverWait wait = new WebDriverWait(Driver, 1);
+            WebDriverWait wait = new WebDriverWait(driver, 1);
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
             Select selectElement = new Select(element);
             selectElement.selectByVisibleText(text);
@@ -289,7 +283,7 @@ public class SeleniumDriverUtility {
     public static String retrieveElementText(String xpath) {
         try {
             waitForElement(xpath);
-            WebDriverWait wait = new WebDriverWait(Driver, 1);
+            WebDriverWait wait = new WebDriverWait(driver, 1);
             WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
 
             return element.getText();
@@ -308,8 +302,8 @@ public class SeleniumDriverUtility {
 
     public static boolean scrollToElement(String elementXpath) {
         try {
-            WebElement element = Driver.findElement(By.xpath(elementXpath));
-            ((JavascriptExecutor) Driver).executeScript("arguments[0].scrollIntoView(true);", element);
+            WebElement element = driver.findElement(By.xpath(elementXpath));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
             Narrator.logDebug("Scrolled to element - " + elementXpath);
             return true;
         } catch (Exception e) {
@@ -321,7 +315,7 @@ public class SeleniumDriverUtility {
     public static String retrieveElementAttribute(String xpath, String attribute) {
         try {
             waitForElement(xpath);
-            WebDriverWait wait = new WebDriverWait(Driver, 1);
+            WebDriverWait wait = new WebDriverWait(driver, 1);
             WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
 
             return element.getAttribute(attribute);
@@ -333,7 +327,7 @@ public class SeleniumDriverUtility {
     public static Boolean validateElementText(String xpath, String text) {
         try {
             waitForElement(xpath);
-            WebDriverWait wait = new WebDriverWait(Driver, 1);
+            WebDriverWait wait = new WebDriverWait(driver, 1);
             wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
 
             return text.equals(retrieveElementText(xpath));
@@ -345,7 +339,7 @@ public class SeleniumDriverUtility {
     public static Boolean validateElementAttribute(String xpath, String Attribute, String AttributeValue) {
         try {
             waitForElement(xpath);
-            WebDriverWait wait = new WebDriverWait(Driver, 1);
+            WebDriverWait wait = new WebDriverWait(driver, 1);
             wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
 
             return AttributeValue.equals(retrieveElementAttribute(xpath, Attribute));
@@ -388,12 +382,12 @@ public class SeleniumDriverUtility {
         try {
 //            String winHandleBefore = SeleniumDriverInstance.Driver.getWindowHandle();
             String winHandleAfter = "";
-            for (String winHandle : Driver.getWindowHandles()) {
+            for (String winHandle : driver.getWindowHandles()) {
                 winHandleAfter = winHandle;
-                Driver.switchTo().window(winHandle);
+                driver.switchTo().window(winHandle);
             }
             //Validate switch.
-            if (!winHandleAfter.equalsIgnoreCase(Driver.getWindowHandle())) {
+            if (!winHandleAfter.equalsIgnoreCase(driver.getWindowHandle())) {
                 Narrator.logError("Failed to switch to new tab" + winHandleAfter);
                 return false;
             }
@@ -401,14 +395,14 @@ public class SeleniumDriverUtility {
             Narrator.logError("Could not switch to new tab" + ex.getMessage());
             return false;
         }
-        Narrator.logDebug("Switched to window " + Driver.getTitle());
+        Narrator.logDebug("Switched to window " + driver.getTitle());
         return true;
     }
 
     public static boolean clearTextByXpath(String elementXpath) {
         try {
             SeleniumDriverUtility.waitForElement(elementXpath);
-            WebElement elementToClear = Driver.findElement(By.xpath(elementXpath));
+            WebElement elementToClear = driver.findElement(By.xpath(elementXpath));
             elementToClear.sendKeys(Keys.chord(Keys.CONTROL, "a"), "");
             elementToClear.sendKeys(Keys.chord(Keys.DELETE));
             elementToClear.clear();
@@ -424,8 +418,8 @@ public class SeleniumDriverUtility {
         try {
             SeleniumDriverUtility.waitForElement(elementXpath);
             WebElement element;
-            JavascriptExecutor executor = (JavascriptExecutor) Driver;
-            element = Driver.findElement(By.xpath(elementXpath));
+            JavascriptExecutor executor = (JavascriptExecutor) driver;
+            element = driver.findElement(By.xpath(elementXpath));
             executor.executeScript("arguments[0].click();", element);
             // WebElement elementToClick = Driver.findElement(By.xpath(elementXpath));
             // element.click();
@@ -441,7 +435,7 @@ public class SeleniumDriverUtility {
         try {
             Narrator.logDebug("Attempting to click OK in alert pop-up");
             // Get a handle to the open alert, prompt or confirmation
-            Alert alert = Driver.switchTo().alert();
+            Alert alert = driver.switchTo().alert();
             // Get the text of the alert or prompt
             alert.getText();
             // And acknowledge the alert (equivalent to clicking "OK")
@@ -475,7 +469,7 @@ public class SeleniumDriverUtility {
 
     public static boolean switchToDefaultContent() {
         try {
-            Driver.switchTo().defaultContent();
+            driver.switchTo().defaultContent();
             Narrator.logDebug("Switched to default content");
             return true;
         } catch (Exception e) {

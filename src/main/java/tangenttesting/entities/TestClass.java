@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main.java.tangenttesting.entities;
 
 import java.lang.reflect.Constructor;
@@ -16,10 +11,6 @@ import static java.lang.System.err;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
-
-/**
- * @author nditema
- */
 
 public class TestClass {
     private final Object testClassInstance;
@@ -36,11 +27,8 @@ public class TestClass {
     }
     
     public Boolean getBlockableStatus(){return blockable;}
-    public void setBlockableStatus(Boolean block){blockable = block ;}
 
-    public Boolean getApiInstance() {
-        return apiInstance;
-    }
+    public void setBlockableStatus(Boolean block){blockable = block ;}
 
     public Object getTestClassInstance() {
         return this.testClassInstance;
@@ -164,18 +152,6 @@ public class TestClass {
 
             Method executeTestMethod = testClassInstance.getClass().getMethod("executeTest");
             return (TestResult) executeTestMethod.invoke(testClassInstance);
-        }
-        catch (Exception e) {
-            return null;
-        }
-    }
-    
-    public TestResult runTest(Device device) {
-        try {
-            Method executeTestMethod = testClassInstance.getClass().getDeclaredMethod("executeTest",Device.class);
-            executeTestMethod.setAccessible(true);
-
-            return (TestResult) executeTestMethod.invoke(testClassInstance,device);
         }
         catch (Exception e) {
             return null;

@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main.java.tangenttesting.entities;
 
 import java.util.LinkedList;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-/**
- * @author nditema
- */
 public class DataRow {
     private final LinkedList<DataColumn> DataColumns;
 

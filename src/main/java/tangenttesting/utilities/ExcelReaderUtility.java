@@ -26,29 +26,26 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-/**
- * @author nditema
- */
 public class ExcelReaderUtility {
-    private static final List<TestEntity> TESTDATALIST = new ArrayList<>();
+    private static final List<TestEntity> testDataList = new ArrayList<>();
     private static Sheet _workSheet;
     private static Workbook _workbook;
-    private static final String EXCEL_EXTENSION = ".xlsx";
+    private static final String excel_extension = ".xlsx";
 
-    public ExcelReaderUtility()
-    {
+    public ExcelReaderUtility() {
         System.setProperty("java.awt.headless", "true");
     }
 
     public static List<TestEntity> getTestDataFromExcelFile(String filePath) {
-        if (filePath.contains(EXCEL_EXTENSION)) {
+        if (filePath.contains(excel_extension)) {
             _workbook = getExcelWorkbook(filePath);
             readExcelWorkSheet(_workbook);
             retrieveTestDataFromSheet();
-        } else {//Assuming the path provided is a folder path with Excel sheets in for a regression pack
+        }
+        else {//Assuming the path provided is a folder path with Excel sheets in for a regression pack
             List<String> excelFilePaths = new ArrayList<>();
             List<File> fileList = new ArrayList<>(Arrays.asList(new File(filePath).listFiles()));
-            fileList = fileList.stream().filter(s -> s.getName() != null && s.getName().toLowerCase().contains(EXCEL_EXTENSION.toLowerCase())).collect(Collectors.toList());
+            fileList = fileList.stream().filter(s -> s.getName() != null && s.getName().toLowerCase().contains(excel_extension.toLowerCase())).collect(Collectors.toList());
             fileList.forEach(s -> excelFilePaths.add(s.getAbsolutePath()));
             excelFilePaths.sort((s1, s2) -> s1.compareTo(s2));//Sorting List Alphabetically
 
@@ -59,7 +56,7 @@ public class ExcelReaderUtility {
                 _workbook = null;
             }
         }
-        return TESTDATALIST;
+        return testDataList;
     }
 
     public static Workbook getExcelWorkbook(String filePath) {
@@ -187,7 +184,7 @@ public class ExcelReaderUtility {
         catch (Exception ex) {
             //Parameters were not detected - keyword might not have data requirements.
         }
-        TESTDATALIST.add(testData);
+        testDataList.add(testData);
     }
 
     public static List<TestEntity> getTestSet(String filepath) {

@@ -5,16 +5,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.Properties;
 import java.util.function.Predicate;
 
-import main.java.tangenttesting.entities.Device;
 import main.java.tangenttesting.entities.Enums;
 import main.java.tangenttesting.entities.TestClass;
 import main.java.tangenttesting.entities.TestEntity;
@@ -23,20 +19,14 @@ import main.java.tangenttesting.reporting.Narrator;
 import main.java.tangenttesting.utilities.ExcelReaderUtility;
 import main.java.tangenttesting.utilities.SeleniumDriverUtility;
 
-/**
- * @author nditema
- */
-
 public class TestMarshall {
 
-    private static List<TestEntity> TESTDATALIST;
+    private static List<TestEntity> testDataList;
     private static final List<TestResult> resultsList = new ArrayList();
-    private final List<Device> DeviceList;
     private static Boolean _isDataSet;
     private static TestEntity testData;
     private String testName;
     private static int iteration;
-    private static boolean isJenkins = false;
     private static Enums.TestType curTestType;
 
     public static void setTestType(Enums.TestType type) {
@@ -45,14 +35,6 @@ public class TestMarshall {
 
     public static Enums.TestType getTestType() {
         return curTestType;
-    }
-
-    public static void setIsJenkins(boolean jenkinsRun) {
-        isJenkins = jenkinsRun;
-    }
-
-    public static boolean getIsJenkins() {
-        return isJenkins;
     }
 
     public static void setIsDataSet(Boolean isDataSet) {
@@ -72,7 +54,7 @@ public class TestMarshall {
     }
 
     public void addToTestDataList(TestEntity data) {
-        TESTDATALIST.add(data);
+        testDataList.add(data);
     }
 
     public static void addToTestResultsList(TestResult data) {
@@ -84,7 +66,7 @@ public class TestMarshall {
     }
 
     public static List<TestEntity> getTestDataList() {
-        return TESTDATALIST;
+        return testDataList;
     }
 
     public static int getIteration() {
@@ -111,32 +93,12 @@ public class TestMarshall {
 
     public TestMarshall(String ExcelPath) {
         Narrator.setup(ExcelPath);
-        TESTDATALIST = ExcelReaderUtility.getTestDataFromExcelFile(ExcelPath);
-        this.DeviceList = null;
+        testDataList = ExcelReaderUtility.getTestDataFromExcelFile(ExcelPath);
     }
 
-//    public TestMarshall(String ExcelPath, List<Device> Devices) {
-//        Narrator.setup(ExcelPath);
-//        TESTDATALIST = ExcelReaderUtility.getTestDataFromExcelFile(ExcelPath);
-//        this.DeviceList = Devices;
-//    }
-
-    public TestMarshall(String ExcelPath, String Test) {
-        Narrator.setup(ExcelPath);
-        this.testName = Test;
-        TESTDATALIST = ExcelReaderUtility.getTestSet(ExcelPath);
-        this.DeviceList = null;
-    }
-
-    public TestMarshall(String ExcelPath, String Test, List<Device> Devices) {
-        Narrator.setup(ExcelPath);
-        this.testName = Test;
-        TESTDATALIST = ExcelReaderUtility.getTestSet(ExcelPath);
-        this.DeviceList = Devices;
-    }
 
     public void runTests() {
-        for (TestEntity TestData : TESTDATALIST) {
+        for (TestEntity TestData : testDataList) {
 
             iteration++;
 
@@ -164,10 +126,6 @@ public class TestMarshall {
     public void tearDown() {
         if (SeleniumDriverUtility.getDriver() != null) {
             SeleniumDriverUtility.getDriver().quit();
-        }
-
-        if (getIsJenkins()) {
-            //copyReportsDirectoryToNetworkDrive();
         }
     }
 

@@ -1,21 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main.java.tangenttesting.entities;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 
-/**
- * @author nditema
- */
 public class Enums {
     public enum ResultStatus {PASS, FAIL, WARNING, UNCERTAIN}
     public enum BrowserType{CHROME, IE, FIREFOX, EDGE}
-    public enum TestType{SELENIUM, SIKULI, DESKTOP, MOBILE}
+    public enum TestType{SELENIUM}
     
     public static BrowserType resolveBrowserType(String browserName) {
         List<BrowserType> browsers = new ArrayList<BrowserType>(EnumSet.allOf(BrowserType.class));
