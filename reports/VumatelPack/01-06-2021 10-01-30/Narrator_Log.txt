@@ -1,0 +1,4 @@
+
+2021/06/01 10:01:32:132  - [INFO] Starting Test -- 2 out of 4 -- 2_VumatelPortal_Orders_OrderAcceptance                                                                                       
+
+2021/06/01 10:01:51:151  - [PASS] Successfully navigated to 'Order Acceptance' page                                                                                       

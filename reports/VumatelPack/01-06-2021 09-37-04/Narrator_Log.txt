@@ -1,0 +1,16 @@
+
+2021/06/01 09:37:07:377  - [INFO] Starting Test -- 3 out of 4 -- 3_VumatelPortal_Network_Events                                                                                       
+
+2021/06/01 09:37:22:3722 - [PASS] Navigated to Vumatel portal page                                                                                       
+
+2021/06/01 09:37:26:3726 - [PASS] Navigated to 'Network Events' page                                                                                        
+
+2021/06/01 09:37:33:3733 - [PASS] Filtered Open Events                                                                                        
+
+2021/06/01 09:37:40:3740 - [PASS] Filtered Future Events                                                                                        
+
+2021/06/01 09:37:45:3745 - [PASS] Failed to click open events                                                                                       
+
+2021/06/01 09:37:47:3747 - [PASS] Event Viewed                                                                                       
+
+2021/06/01 09:37:48:3748 - [PASS] Test Complete.                                                                                       

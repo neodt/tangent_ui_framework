@@ -1,0 +1,6 @@
+
+2021/05/26 14:57:03:573  - [INFO] Starting Test -- 2 out of 4 -- 2_VumatelPortal_Orders_OrderAcceptance                                                                                       
+
+2021/05/26 14:57:15:5715 - [PASS] Successfully navigated to 'Order Acceptance' page                                                                                       
+
+2021/05/26 14:57:18:5718 - [PASS] Successfully filtered orders by date from '2019-04-19' to '2020-04-19'                                                                                       

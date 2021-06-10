@@ -1,0 +1,18 @@
+
+2021/05/26 14:55:09:559  - [INFO] Starting Test -- 2 out of 4 -- 2_VumatelPortal_Orders_OrderAcceptance                                                                                       
+
+2021/05/26 14:55:20:5520 - [PASS] Successfully navigated to 'Order Acceptance' page                                                                                       
+
+2021/05/26 14:55:23:5523 - [PASS] Successfully filtered orders by date from '2019-04-19' to '2020-04-19'                                                                                       
+
+2021/05/26 14:55:56:5556 - [FAIL] Failed to click view button                                                                                        
+
+2021/05/26 14:55:56:5556 - [INFO] Starting Test -- 4 out of 4 -- 4_VumatelPortal_Organization_UserManagement                                                                                       
+
+2021/05/26 14:56:04:564  - [PASS] Successfully navigated to Vumatel portal page                                                                                       
+
+2021/05/26 14:56:10:5610 - [PASS] User successfully added                                                                                        
+
+2021/05/26 14:56:14:5614 - [PASS] Password reset successfully                                                                                        
+
+2021/05/26 14:56:15:5615 - [PASS] Test Complete.                                                                                       

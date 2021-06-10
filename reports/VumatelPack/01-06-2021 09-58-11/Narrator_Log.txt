@@ -1,0 +1,20 @@
+
+2021/06/01 09:58:13:5813 - [INFO] Starting Test -- 1 out of 4 -- 1_VumatelPortal_Login                                                                                       
+
+2021/06/01 09:58:19:5819 - [PASS] Navigated to Vumatel                                                                                       
+
+2021/06/01 09:58:21:5821 - [PASS] Email entered                                                                                       
+
+2021/06/01 09:58:22:5822 - [PASS] Password entered                                                                                       
+
+2021/06/01 09:58:25:5825 - [PASS] Test Complete.                                                                                       
+
+2021/06/01 09:58:25:5825 - [INFO] Starting Test -- 2 out of 4 -- 2_VumatelPortal_Orders_OrderAcceptance                                                                                       
+
+2021/06/01 09:58:43:5843 - [PASS] Successfully navigated to 'Order Acceptance' page                                                                                       
+
+2021/06/01 09:59:18:5918 - [FAIL] Failed to filter by date                                                                                        
+
+2021/06/01 09:59:19:5919 - [INFO] Starting Test -- 3 out of 4 -- 3_VumatelPortal_Network_Events                                                                                       
+
+2021/06/01 09:59:31:5931 - [PASS] Navigated to Vumatel portal page                                                                                       

@@ -1,0 +1,60 @@
+
+2021/06/01 11:14:07:147  - [INFO] Starting Test -- 1 out of 4 -- 1_VumatelPortal_Login                                                                                       
+
+2021/06/01 11:14:11:1411 - [PASS] Navigated to Vumatel                                                                                       
+
+2021/06/01 11:14:12:1412 - [PASS] Email entered                                                                                       
+
+2021/06/01 11:14:12:1412 - [PASS] Password entered                                                                                       
+
+2021/06/01 11:14:15:1415 - [PASS] Test Complete.                                                                                       
+
+2021/06/01 11:14:15:1415 - [INFO] Starting Test -- 2 out of 4 -- 2_VumatelPortal_Orders_OrderAcceptance                                                                                       
+
+2021/06/01 11:14:28:1428 - [PASS] Successfully navigated to 'Order Acceptance' page                                                                                       
+
+2021/06/01 11:14:30:1430 - [PASS] Successfully filtered orders by date from '2019-02-13' to '2020-04-19'                                                                                       
+
+2021/06/01 11:14:33:1433 - [PASS] Successfully returned the correct order from search 'VT-161118-922473'                                                                                       
+
+2021/06/01 11:14:37:1437 - [PASS] Accept Order PopUp successful                                                                                        
+
+2021/06/01 11:14:40:1440 - [PASS] Order successfully accepted                                                                                        
+
+2021/06/01 11:14:42:1442 - [PASS] Reject Order PopUp successful                                                                                        
+
+2021/06/01 11:14:44:1444 - [PASS] Order successfully rejected                                                                                        
+
+2021/06/01 11:14:44:1444 - [PASS] Test Complete.                                                                                       
+
+2021/06/01 11:14:44:1444 - [INFO] Starting Test -- 3 out of 4 -- 3_VumatelPortal_Network_Events                                                                                       
+
+2021/06/01 11:14:52:1452 - [PASS] Navigated to Vumatel portal page                                                                                       
+
+2021/06/01 11:14:55:1455 - [PASS] Navigated to 'Network Events' page                                                                                        
+
+2021/06/01 11:14:59:1459 - [PASS] Filtered Open Events                                                                                        
+
+2021/06/01 11:15:04:154  - [PASS] Filtered Future Events                                                                                        
+
+2021/06/01 11:15:07:157  - [PASS] Filtered Historic Events                                                                                       
+
+2021/06/01 11:15:09:159  - [PASS] Event Viewed                                                                                       
+
+2021/06/01 11:15:09:159  - [PASS] Test Complete.                                                                                       
+
+2021/06/01 11:15:09:159  - [INFO] Starting Test -- 4 out of 4 -- 4_VumatelPortal_Organization_UserManagement                                                                                       
+
+2021/06/01 11:15:16:1516 - [PASS] Successfully navigated to Vumatel portal page                                                                                       
+
+2021/06/01 11:15:19:1519 - [PASS] User to be added                                                                                        
+
+2021/06/01 11:15:24:1524 - [PASS] Successfully added and searched for user                                                                                        
+
+2021/06/01 11:15:26:1526 - [PASS] Reset password PopOp                                                                                       
+
+2021/06/01 11:15:29:1529 - [PASS] Edit User popUp                                                                                       
+
+2021/06/01 11:15:32:1532 - [PASS] AfriHost Sales switch activated                                                                                       
+
+2021/06/01 11:15:32:1532 - [PASS] Test Complete.                                                                                       

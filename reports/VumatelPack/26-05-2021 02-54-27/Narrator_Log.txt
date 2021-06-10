@@ -1,0 +1,10 @@
+
+2021/05/26 14:54:27:5427 - [INFO] Starting Test -- 4 out of 4 -- 4_VumatelPortal_Organization_UserManagement                                                                                       
+
+2021/05/26 14:54:35:5435 - [PASS] Successfully navigated to Vumatel portal page                                                                                       
+
+2021/05/26 14:54:43:5443 - [PASS] User successfully added                                                                                        
+
+2021/05/26 14:54:46:5446 - [PASS] Password reset successfully                                                                                        
+
+2021/05/26 14:54:48:5448 - [PASS] Test Complete.                                                                                       

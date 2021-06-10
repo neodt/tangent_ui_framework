@@ -1,0 +1,10 @@
+
+2021/05/27 13:06:43:643  - [INFO] Starting Test -- 2 out of 4 -- 2_VumatelPortal_Orders_OrderAcceptance                                                                                       
+
+2021/05/27 13:07:01:71   - [FAIL] Failed to click 'Orders' dropdown                                                                                        
+
+2021/05/27 13:07:02:72   - [INFO] Starting Test -- 4 out of 4 -- 4_VumatelPortal_Organization_UserManagement                                                                                       
+
+2021/05/27 13:07:11:711  - [PASS] Successfully navigated to Vumatel portal page                                                                                       
+
+2021/05/27 13:07:16:716  - [FAIL] Failed to click Organization tab                                                                                        

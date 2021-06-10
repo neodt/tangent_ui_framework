@@ -1,0 +1,16 @@
+
+2021/05/27 13:07:41:741  - [INFO] Starting Test -- 2 out of 4 -- 2_VumatelPortal_Orders_OrderAcceptance                                                                                       
+
+2021/05/27 13:07:53:753  - [FAIL] Failed to click 'Orders' dropdown                                                                                        
+
+2021/05/27 13:07:53:753  - [INFO] Starting Test -- 4 out of 4 -- 4_VumatelPortal_Organization_UserManagement                                                                                       
+
+2021/05/27 13:08:01:81   - [PASS] Successfully navigated to Vumatel portal page                                                                                       
+
+2021/05/27 13:08:12:812  - [PASS] Successfully added and searched for user                                                                                        
+
+2021/05/27 13:08:15:815  - [PASS] Reset password PopOp                                                                                       
+
+2021/05/27 13:08:18:818  - [PASS] Edit User popUp                                                                                       
+
+2021/05/27 13:08:19:819  - [PASS] Test Complete.                                                                                       
