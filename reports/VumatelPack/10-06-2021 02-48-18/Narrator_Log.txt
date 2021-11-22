@@ -1,0 +1,12 @@
+
+2021/06/10 14:48:19:4819 - [INFO] Starting Test -- 1 out of 4 -- 1_VumatelPortal_Login                                                                                       
+
+2021/06/10 14:48:22:4822 - [PASS] Navigated to Vumatel                                                                                       
+
+2021/06/10 14:48:23:4823 - [PASS] Email entered                                                                                       
+
+2021/06/10 14:48:23:4823 - [PASS] Password entered                                                                                       
+
+2021/06/10 14:48:25:4825 - [PASS] Test Complete.                                                                                       
+
+2021/06/10 14:48:25:4825 - [INFO] Starting Test -- 2 out of 4 -- 2_VumatelPortal_Orders_OrderAcceptance                                                                                       

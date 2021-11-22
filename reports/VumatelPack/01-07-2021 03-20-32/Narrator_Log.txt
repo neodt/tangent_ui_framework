@@ -1,0 +1,36 @@
+
+2021/07/01 15:20:35:2035 - [INFO] Starting Test -- 1 out of 4 -- 1_VumatelPortal_Login                                                                                       
+
+2021/07/01 15:20:42:2042 - [PASS] Navigated to Vumatel                                                                                       
+
+2021/07/01 15:20:46:2046 - [PASS] Email entered                                                                                       
+
+2021/07/01 15:20:47:2047 - [PASS] Password entered                                                                                       
+
+2021/07/01 15:20:51:2051 - [PASS] Test Complete.                                                                                       
+
+2021/07/01 15:20:51:2051 - [INFO] Starting Test -- 2 out of 4 -- 2_VumatelPortal_Orders_OrderAcceptance                                                                                       
+
+2021/07/01 15:21:16:2116 - [PASS] Successfully navigated to 'Order Acceptance' page                                                                                       
+
+2021/07/01 15:21:51:2151 - [FAIL] Failed to filter by date                                                                                        
+
+2021/07/01 15:21:52:2152 - [INFO] Starting Test -- 3 out of 4 -- 3_VumatelPortal_Network_Events                                                                                       
+
+2021/07/01 15:22:17:2217 - [FAIL] Failed to click 'Vumatel Portal Page' div                                                                                        
+
+2021/07/01 15:22:18:2218 - [INFO] Starting Test -- 4 out of 4 -- 4_VumatelPortal_Organization_UserManagement                                                                                       
+
+2021/07/01 15:22:36:2236 - [PASS] Successfully navigated to Vumatel portal page                                                                                       
+
+2021/07/01 15:22:46:2246 - [PASS] User to be added                                                                                        
+
+2021/07/01 15:22:54:2254 - [PASS] Successfully added and searched for user                                                                                        
+
+2021/07/01 15:22:57:2257 - [PASS] Reset password PopOp                                                                                       
+
+2021/07/01 15:23:02:232  - [PASS] Edit User popUp                                                                                       
+
+2021/07/01 15:23:04:234  - [PASS] AfriHost Sales switch activated                                                                                       
+
+2021/07/01 15:23:05:235  - [PASS] Test Complete.                                                                                       
